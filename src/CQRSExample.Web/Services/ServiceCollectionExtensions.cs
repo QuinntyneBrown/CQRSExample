@@ -1,4 +1,5 @@
-﻿using MediatR;
+﻿using CQRSExample.Infrastructure.Configuration;
+using MediatR;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Swashbuckle.AspNetCore.Swagger;
@@ -9,7 +10,7 @@ namespace CQRSExample.Web.Services
     {
         public static IServiceCollection AddCustomConfiguration(this IServiceCollection services, IConfiguration configuration)
         {
-            Configuration.Options.LoadConfigurationOptions(services, configuration);
+            services.Configure<AuthenticationSettings>(configuration.GetSection("Authentication"));            
             return services;
         }
 

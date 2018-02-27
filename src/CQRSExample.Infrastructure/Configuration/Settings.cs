@@ -1,4 +1,4 @@
-﻿namespace CQRSExample.Web.Configuration
+﻿namespace CQRSExample.Infrastructure.Configuration
 {
     public class AuthenticationSettings
     {
