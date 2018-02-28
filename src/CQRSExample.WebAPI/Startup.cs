@@ -36,7 +36,7 @@ namespace CQRSExample.Web
         {
             app.UseSecurity();
             app.UseMvc();
-            app.UseSignalR(routes => routes.MapHub<AppHub>("appHub"));
+            app.UseSignalR(routes => routes.MapHub<AppHub>("/appHub"));
             app.UseCustomSwagger();
         }
     }

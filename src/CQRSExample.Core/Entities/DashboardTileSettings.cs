@@ -2,6 +2,7 @@
 {
     public class DashboardTileSettings
     {
+        public int DashboardTileSettingsId { get; set; }
         public int DashboardTileId { get; set; }
         public DashboardTile DashboardTile { get; set; }
         public int Top { get; set; }
