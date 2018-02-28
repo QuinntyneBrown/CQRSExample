@@ -1,4 +1,4 @@
-﻿namespace CQRSExample.WebAPI.Features.DigitalAssets
+﻿namespace CQRSExample.API.Features.DigitalAssets
 {
     public static class Constants
     {
