@@ -47,7 +47,5 @@ namespace CQRSExample.Features.Users
             private readonly IAppDataContext _context;
             private readonly ICache _cache;
         }
-
     }
-
 }

@@ -77,7 +77,7 @@ namespace CQRSExample.Web.Services
         {
             services.AddDbContextPool<AppDataContext>(options =>
             {
-                options.UseSqlServer(connectionString);
+                options.UseSqlServer(connectionString, b=> b.MigrationsAssembly("CQRSExample.WebAPI"));
             });
 
             services.AddScoped<IAppDataContext, AppDataContext>();

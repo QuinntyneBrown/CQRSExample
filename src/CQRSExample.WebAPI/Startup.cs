@@ -34,10 +34,12 @@ namespace CQRSExample.Web
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, IEncryptionService encryptionService, AppDataContext context)
         {
+            context.Database.EnsureCreated();
             app.UseSecurity();
             app.UseMvc();
             app.UseSignalR(routes => routes.MapHub<AppHub>("/appHub"));
             app.UseCustomSwagger();
+            
         }
     }
 }
