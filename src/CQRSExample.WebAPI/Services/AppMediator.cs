@@ -1,6 +1,7 @@
 ﻿using CQRSExample.Core;
 using CQRSExample.Infrastructure.Data;
-using CQRSExample.Web.Extensions;
+using CQRSExample.Infrastructure.Requests;
+using CQRSExample.Infrastructure.Extensions;
 using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Primitives;

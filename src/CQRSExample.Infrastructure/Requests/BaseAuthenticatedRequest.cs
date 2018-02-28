@@ -1,4 +1,4 @@
-﻿namespace CQRSExample.Core
+﻿namespace CQRSExample.Infrastructure.Requests
 {
     public class BaseAuthenticatedRequest: BaseRequest
     {

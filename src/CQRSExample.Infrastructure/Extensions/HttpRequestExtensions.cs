@@ -2,7 +2,7 @@
 using Microsoft.Extensions.Primitives;
 using System.Linq;
 
-namespace CQRSExample.Web.Extensions
+namespace CQRSExample.Infrastructure.Extensions
 {
     public static class HttpRequestExtensions
     {

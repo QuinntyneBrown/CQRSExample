@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CQRSExample.Core
+namespace CQRSExample.Infrastructure.Requests
 {
     public class BaseRequest
     {

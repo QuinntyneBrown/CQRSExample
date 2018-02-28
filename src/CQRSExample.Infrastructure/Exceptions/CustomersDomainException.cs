@@ -1,6 +1,6 @@
 ﻿namespace CQRSExample.Infrastructure.Exceptions
 {
-    public class UsersDomainException: DomainException
+    public class CustomersDomainException: DomainException
     {
     }
 }
