@@ -1,14 +1,10 @@
-﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace CQRSExample.Core.Entities
+﻿namespace CQRSExample.Core.Entities
 {
-    [Owned]
-    public class StreetAddress
+    public class StreetAddress: BaseModel
     {
-        public string Street { get; set; }
+        public int StreetAddressId { get; set; }
+        public string Street1 { get; set; }
+        public string Street2 { get; set; }
         public string City { get; set; }
         public string Province { get; set; }
         public string PostalCode { get; set; }

@@ -5,7 +5,7 @@ using CQRSExample.Infrastructure.Data;
 using CQRSExample.Infrastructure.Services;
 using CQRSExample.Infrastructure.Requests;
 
-namespace CQRSExample.WepAPI.Features.Roles
+namespace CQRSExample.WebAPI.Features.Roles
 {
     public class GetRoleByIdQuery
     {

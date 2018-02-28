@@ -1,6 +1,6 @@
 using CQRSExample.Core.Entities;
 
-namespace CQRSExample.WepAPI.Features.Customers
+namespace CQRSExample.WebAPI.Features.Customers
 {
     public class CustomerApiModel
     {        

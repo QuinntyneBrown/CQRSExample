@@ -1,6 +1,6 @@
 using CQRSExample.Core.Entities;
 
-namespace CQRSExample.WepAPI.Features.Roles
+namespace CQRSExample.WebAPI.Features.Roles
 {
     public class RoleApiModel
     {        

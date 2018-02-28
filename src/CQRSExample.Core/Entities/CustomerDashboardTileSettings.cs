@@ -3,6 +3,6 @@
     public class CustomerDashboardTileSettings: DashboardTileSettings
     {
         public new CustomerDashboardTile DashboardTile { get; set; }
-        public int PageSize { get; set; }
+        public int PageSize { get; set; } = 3;
     }
 }

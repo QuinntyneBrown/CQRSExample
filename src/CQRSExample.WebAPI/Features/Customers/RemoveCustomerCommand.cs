@@ -6,7 +6,7 @@ using CQRSExample.Infrastructure.Data;
 using CQRSExample.Infrastructure.Services;
 using CQRSExample.Infrastructure.Requests;
 
-namespace CQRSExample.WepAPI.Features.Customers
+namespace CQRSExample.WebAPI.Features.Customers
 {
     public class RemoveCustomerCommand
     {

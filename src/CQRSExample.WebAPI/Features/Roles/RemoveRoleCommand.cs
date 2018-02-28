@@ -5,7 +5,7 @@ using CQRSExample.Infrastructure.Data;
 using CQRSExample.Infrastructure.Requests;
 using CQRSExample.Infrastructure.Services;
 
-namespace CQRSExample.WepAPI.Features.Roles
+namespace CQRSExample.WebAPI.Features.Roles
 {
     public class RemoveRoleCommand
     {

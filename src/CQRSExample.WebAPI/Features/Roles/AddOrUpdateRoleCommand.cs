@@ -7,7 +7,7 @@ using CQRSExample.Infrastructure.Services;
 using CQRSExample.Infrastructure.Requests;
 using CQRSExample.Core.Entities;
 
-namespace CQRSExample.WepAPI.Features.Roles
+namespace CQRSExample.WebAPI.Features.Roles
 {
     public class AddOrUpdateRoleCommand
     {
