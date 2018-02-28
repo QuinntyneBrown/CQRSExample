@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="Features\Customers\" />
+    <Folder Include="Features\Dashboards\" />
+    <Folder Include="Features\DashboardTiles\" />
+    <Folder Include="Features\Tiles\" />
     <Folder Include="Features\Roles\" />
     <Folder Include="Features\Users\" />
     <Folder Include="wwwroot\" />
@@ -14,6 +18,7 @@
     <PackageReference Include="MediatR" Version="4.0.1" />
     <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="4.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.App" Version="2.1.0-preview1-final" />
+    <PackageReference Include="Microsoft.Extensions.Http" Version="2.1.0-preview1-final" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="2.1.0" />
     <PackageReference Include="Microsoft.AspNetCore.SignalR" Version="1.0.0-preview1-final" />
   </ItemGroup>

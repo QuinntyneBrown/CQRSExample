@@ -1,8 +1,11 @@
 ﻿using CQRSExample.Infrastructure.Configuration;
+using CQRSExample.Infrastructure.Data;
+using CQRSExample.Infrastructure.Filters;
 using CQRSExample.Infrastructure.Identity;
 using CQRSExample.Infrastructure.Services;
 using MediatR;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
@@ -42,6 +45,16 @@ namespace CQRSExample.Web.Services
             return services;
         }
 
+        public static IServiceCollection AddCustomMvc(this IServiceCollection services)
+        {
+            services.AddMvc(options =>
+            {
+                options.Filters.Add(typeof(HttpGlobalExceptionFilter));
+            }).AddControllersAsServices();
+
+            return services;
+        }
+
         public static IServiceCollection AddCustomSwagger(this IServiceCollection services)
         {
             services.AddSwaggerGen(options =>
@@ -55,6 +68,19 @@ namespace CQRSExample.Web.Services
                 });
                 options.CustomSchemaIds(x => x.FullName);
             });
+
+            return services;
+        }
+
+        public static IServiceCollection AddDataStores(this IServiceCollection services,
+                                               string connectionString)
+        {
+            services.AddDbContextPool<AppDataContext>(options =>
+            {
+                options.UseSqlServer(connectionString);
+            });
+
+            services.AddScoped<IAppDataContext, AppDataContext>();
 
             return services;
         }

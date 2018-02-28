@@ -2,6 +2,6 @@
 {
     public class CustomerDashboardTileSettings: DashboardTileSettings
     {
-
+        public new CustomerDashboardTile DashboardTile { get; set; }
     }
 }

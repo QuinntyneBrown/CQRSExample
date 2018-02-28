@@ -2,6 +2,6 @@
   "useMessaging": "false",
   "clientNamespace": "ce",
   "version": "core",
-  "rootNamespace": "CQRSExample.WepAPI",
+  "rootNamespace": "CQRSExample",
   "framework": "AspNetCore"
 }

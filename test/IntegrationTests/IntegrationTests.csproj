@@ -13,4 +13,13 @@
     <DotNetCliToolReference Include="dotnet-xunit" Version="2.3.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Features\Customers\" />
+    <Folder Include="Features\DashboardTiles\" />
+    <Folder Include="Features\Dashboards\" />
+    <Folder Include="Features\Tiles\" />
+    <Folder Include="Features\Users\" />
+    <Folder Include="Features\Roles\" />
+  </ItemGroup>
+
 </Project>
