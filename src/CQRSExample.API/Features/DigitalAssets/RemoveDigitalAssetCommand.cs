@@ -14,9 +14,7 @@ namespace CQRSExample.API.Features.DigitalAssets
         {
             public Guid Id { get; set; }
         }
-
-        public class Response { }
-
+        
         public class Handler : IRequestHandler<Request>
         {
             public Handler(IAppDataContext context, ICache cache)

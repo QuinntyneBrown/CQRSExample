@@ -20,7 +20,7 @@ namespace CQRSExample.Features.Products
         [Route("add")]
         [HttpPost]
         [ProducesResponseType(typeof(AddOrUpdateProductCommand.Response),(int)HttpStatusCode.OK)]
-        public async Task<IActionResult> Add([FromBody]AddOrUpdateProductCommand.Request request)
+        public async Task<IActionResult> Add(AddOrUpdateProductCommand.Request request)
             => Ok(await _mediator.Send(request));
         
         [Route("update")]
