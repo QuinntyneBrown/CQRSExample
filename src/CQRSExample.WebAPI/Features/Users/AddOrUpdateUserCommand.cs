@@ -7,18 +7,18 @@ using CQRSExample.Infrastructure.Services;
 using CQRSExample.Infrastructure.Requests;
 using CQRSExample.Core.Entities;
 
-namespace CQRSExample.Features.DashboardTiles
+namespace CQRSExample.Features.Users
 {
-    public class AddOrUpdateDashboardTileCommand
+    public class AddOrUpdateUserCommand
     {
         public class Request : BaseAuthenticatedRequest, IRequest<Response>
         {            
-            public DashboardTileApiModel DashboardTile { get; set; }
+            public UserApiModel User { get; set; }
         }
 
         public class Response
         {            
-            public int DashboardTileId { get; set; }
+            public int UserId { get; set; }
         }
 
         public class Handler : IRequestHandler<Request, Response>
@@ -31,21 +31,23 @@ namespace CQRSExample.Features.DashboardTiles
 
             public async Task<Response> Handle(Request request, CancellationToken cancellationToken)
             {
-                var dashboardTile = await _context.DashboardTiles
-                    .SingleOrDefaultAsync(x => x.DashboardTileId == request.DashboardTile.DashboardTileId);
+                var user = await _context.Users
+                    .SingleOrDefaultAsync(x => x.UserId == request.User.UserId);
                 
-                if (dashboardTile == null)
-                    _context.DashboardTiles.Add(dashboardTile = new DashboardTile());
+                if (user == null)
+                    _context.Users.Add(user = new User());
 
-                dashboardTile.Name = request.DashboardTile.Name;
+                user.Username = request.User.Username;
                 
                 await _context.SaveChangesAsync(cancellationToken, request.Username);
 
-                return new Response() { DashboardTileId = dashboardTile.DashboardTileId };
+                return new Response() { UserId = user.UserId };
             }
 
             private readonly IAppDataContext _context;
             private readonly ICache _cache;
         }
+
     }
+
 }

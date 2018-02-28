@@ -1,0 +1,6 @@
+﻿namespace TestUtilities
+{
+    class AppHubConnectionFactory
+    {
+    }
+}

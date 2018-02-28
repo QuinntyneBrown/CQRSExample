@@ -17,6 +17,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnitTests", "test\UnitTests
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CQRSExample.WebAPI", "src\CQRSExample.WebAPI\CQRSExample.WebAPI.csproj", "{A2B1EAC3-C08C-4ABA-BAAD-8DB8A2A3C196}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestUtilities", "test\TestUtilities\TestUtilities.csproj", "{569B300F-BB87-4943-835F-89E05FAACBD2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +49,10 @@ Global
 		{A2B1EAC3-C08C-4ABA-BAAD-8DB8A2A3C196}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A2B1EAC3-C08C-4ABA-BAAD-8DB8A2A3C196}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A2B1EAC3-C08C-4ABA-BAAD-8DB8A2A3C196}.Release|Any CPU.Build.0 = Release|Any CPU
+		{569B300F-BB87-4943-835F-89E05FAACBD2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{569B300F-BB87-4943-835F-89E05FAACBD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{569B300F-BB87-4943-835F-89E05FAACBD2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{569B300F-BB87-4943-835F-89E05FAACBD2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -54,6 +60,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{6959E32D-A68B-419C-876E-A603B491563F} = {CC86A931-2D03-4AF4-804D-73D9D24E87E9}
 		{78FB27D9-82C9-4D2B-9A89-30D424B8F266} = {CC86A931-2D03-4AF4-804D-73D9D24E87E9}
+		{569B300F-BB87-4943-835F-89E05FAACBD2} = {CC86A931-2D03-4AF4-804D-73D9D24E87E9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CAE164F5-F4CD-49FE-833A-3D726CF98A08}
