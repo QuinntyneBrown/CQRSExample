@@ -1,0 +1,2 @@
+﻿export const TILES_SELECTED = "[Tiles] TILES_SELECTED";
+export const TILES_SELECT_CANCEL = "[Tiles] TILES_SELECT_CANCEL";

@@ -7,6 +7,7 @@ using CQRSExample.WebAPI.Services;
 using CQRSExample.WebAPI.Middleware;
 using CQRSExample.Infrastructure.Services;
 using CQRSExample.Infrastructure.Data;
+using Microsoft.Extensions.Logging;
 
 namespace CQRSExample.Web
 {
@@ -32,9 +33,11 @@ namespace CQRSExample.Web
             services.AddCustomMvc();
         }
 
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, IEncryptionService encryptionService, AppDataContext context)
+        public void Configure(IApplicationBuilder app, 
+            IHostingEnvironment env, IEncryptionService encryptionService, AppDataContext context, ILoggerFactory loggerFactory)
         {
-            context.Database.EnsureCreated();
+            loggerFactory.AddConsole(Configuration.GetSection("Logging"));
+            loggerFactory.AddDebug();
             app.UseSecurity();
             app.UseMvc();
             app.UseSignalR(routes => routes.MapHub<AppHub>("/appHub"));

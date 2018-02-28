@@ -1,5 +1,5 @@
 {
-  "name": "cqrs-example-spa",
+  "name": "comsense-enterprise-v3-spa",
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
@@ -19,6 +19,9 @@
     "@angular/platform-browser-dynamic": "5.2.0",
     "@angular/platform-server": "5.2.0",
     "@angular/router": "5.2.0",
+    "@aspnet/signalr-client": "^1.0.0-alpha2-final",
+    "@ngrx/effects": "^5.0.1",
+    "@ngrx/store": "5.0.0",
     "@ngtools/webpack": "1.9.3",
     "@types/jasmine": "2.5.38",
     "@types/node": "6.0.60",
@@ -32,7 +35,7 @@
     "live-server": "1.2.0",
     "raw-loader": "0.5.1",
     "rxjs": "5.5.6",
-    "typescript": "^2.7.1",
+    "typescript": "2.7.1",
     "uglify-es": "github:mishoo/UglifyJS2#harmony",
     "uglifyjs-webpack-plugin": "1.1.6",
     "webfontloader": "1.6.28",

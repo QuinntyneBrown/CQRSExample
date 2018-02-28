@@ -31,8 +31,7 @@ namespace CQRSExample.WebAPI.Features.Customers
 
             public async Task<Response> Handle(Request request, CancellationToken cancellationToken)
             {
-                var customer = await _context.Customers
-                    .SingleOrDefaultAsync(x => x.CustomerId == request.Customer.CustomerId);
+                var customer = await _context.Customers.FindAsync(request.Customer.CustomerId);
                 
                 if (customer == null)
                     _context.Customers.Add(customer = new Customer());

@@ -8,6 +8,10 @@
     <Folder Include="Features\Customers\" />
     <Folder Include="Features\Dashboards\" />
     <Folder Include="Features\DashboardTiles\" />
+    <Folder Include="Features\Orders\" />
+    <Folder Include="Features\ServiceProviders\" />
+    <Folder Include="Features\Services\" />
+    <Folder Include="Features\Products\" />
     <Folder Include="Features\Tiles\" />
     <Folder Include="Features\Roles\" />
     <Folder Include="Features\Users\" />

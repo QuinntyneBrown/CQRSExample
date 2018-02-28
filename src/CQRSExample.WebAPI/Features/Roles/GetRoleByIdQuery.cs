@@ -1,11 +1,14 @@
 using MediatR;
 using System.Threading.Tasks;
 using System.Threading;
+using Microsoft.EntityFrameworkCore;
 using CQRSExample.Infrastructure.Data;
 using CQRSExample.Infrastructure.Services;
 using CQRSExample.Infrastructure.Requests;
+using CQRSExample.Core.Entities;
 
-namespace CQRSExample.WebAPI.Features.Roles
+
+namespace CQRSExample.Features.Roles
 {
     public class GetRoleByIdQuery
     {

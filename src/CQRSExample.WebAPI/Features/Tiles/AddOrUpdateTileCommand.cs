@@ -1,7 +1,6 @@
 using MediatR;
 using System.Threading.Tasks;
 using System.Threading;
-using Microsoft.EntityFrameworkCore;
 using CQRSExample.Infrastructure.Data;
 using CQRSExample.Infrastructure.Services;
 using CQRSExample.Infrastructure.Requests;
@@ -31,8 +30,7 @@ namespace CQRSExample.Features.Tiles
 
             public async Task<Response> Handle(Request request, CancellationToken cancellationToken)
             {
-                var tile = await _context.Tiles
-                    .SingleOrDefaultAsync(x => x.TileId == request.Tile.TileId);
+                var tile = await _context.Tiles.FindAsync(request.Tile.TileId);
                 
                 if (tile == null)
                     _context.Tiles.Add(tile = new Tile());
@@ -47,7 +45,5 @@ namespace CQRSExample.Features.Tiles
             private readonly IAppDataContext _context;
             private readonly ICache _cache;
         }
-
     }
-
 }

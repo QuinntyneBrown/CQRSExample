@@ -31,8 +31,7 @@ namespace CQRSExample.Features.Dashboards
 
             public async Task<Response> Handle(Request request, CancellationToken cancellationToken)
             {
-                var dashboard = await _context.Dashboards
-                    .SingleOrDefaultAsync(x => x.DashboardId == request.Dashboard.DashboardId);
+                var dashboard = await _context.Dashboards.FindAsync(request.Dashboard.DashboardId);
                 
                 if (dashboard == null)
                     _context.Dashboards.Add(dashboard = new Dashboard());

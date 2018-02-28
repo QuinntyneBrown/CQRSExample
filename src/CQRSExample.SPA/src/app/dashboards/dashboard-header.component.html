@@ -1,0 +1,17 @@
+<h1>
+    Enterprise
+</h1>
+<ul>
+    <li *ngFor="let dashboard of dashboards$ | async">
+        <a routerLink="/dashboard/{{ dashboard.dashboardId }}">{{ dashboard.code }}</a>
+    </li>
+    <li *ngIf="!dashboardInEditMode">
+        <a (click)="tryToAddDashboard()">+</a>
+    </li>
+    <li *ngIf="dashboardInEditMode">
+        <form novalidate [formGroup]="form" autocomplete="off" spellcheck="false">
+            <input type="text" id="code" formControlName="code" />
+            <button (click)="tryToSaveDashboard()">Save</button>
+        </form>
+    </li>
+</ul>

@@ -31,8 +31,7 @@ namespace CQRSExample.Features.DashboardTiles
 
             public async Task<Response> Handle(Request request, CancellationToken cancellationToken)
             {
-                var dashboardTile = await _context.DashboardTiles
-                    .SingleOrDefaultAsync(x => x.DashboardTileId == request.DashboardTile.DashboardTileId);
+                var dashboardTile = await _context.DashboardTiles.FindAsync(request.DashboardTile.DashboardTileId);
                 
                 if (dashboardTile == null)
                     _context.DashboardTiles.Add(dashboardTile = new DashboardTile());

@@ -1,0 +1,8 @@
+<section>
+    <ul>
+        <li *ngFor="let dashboard of dashboards">
+            <span>{{ dashboard.code }}</span>
+            <a (click)="tryToRemoveDashboard.emit({ dashboard: dashboard })">Remove</a>
+        </li>
+    </ul>
+</section>

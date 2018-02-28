@@ -1,4 +1,10 @@
 ﻿{
   "useMessaging": "false",
-  "clientNamespace": "ce"
+  "clientNamespace": "cs",
+  "version": "core",
+  "rootNamespace": "Comsense.Enterprise.v3",
+  "framework": "AspNetCore",
+  "multiTenant": false,
+  "softDelete": false,
+  "vanillaSql": true
 }

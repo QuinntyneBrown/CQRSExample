@@ -10,7 +10,7 @@ namespace CQRSExample.Infrastructure.Identity
 {
     public interface ITokenProvider
     {
-        string Get(string code);
+        string Get(string username);
     }
 
     public class TokenProvider : ITokenProvider

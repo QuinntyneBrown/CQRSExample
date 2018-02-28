@@ -1,6 +1,6 @@
 using CQRSExample.Core.Entities;
 
-namespace CQRSExample.WebAPI.Features.Roles
+namespace CQRSExample.Features.Roles
 {
     public class RoleApiModel
     {        
@@ -13,6 +13,6 @@ namespace CQRSExample.WebAPI.Features.Roles
             model.RoleId = role.RoleId;
             model.Name = role.Name;
             return model;
-        }        
+        }
     }
 }

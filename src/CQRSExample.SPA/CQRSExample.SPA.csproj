@@ -2,21 +2,70 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
+    <TypeScriptToolsVersion>2.7</TypeScriptToolsVersion>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="src\app\customers\**" />
+    <Compile Remove="src\app\tenants\**" />
+    <Content Remove="src\app\customers\**" />
+    <Content Remove="src\app\tenants\**" />
+    <EmbeddedResource Remove="src\app\customers\**" />
+    <EmbeddedResource Remove="src\app\tenants\**" />
+    <None Remove="src\app\customers\**" />
+    <None Remove="src\app\tenants\**" />
+  </ItemGroup>
 
   <ItemGroup>
     <Folder Include="src\app\login\" />
     <Folder Include="src\app\dashboards\" />
     <Folder Include="src\app\dashboard-tiles\" />
-    <Folder Include="src\app\customers\" />
     <Folder Include="src\app\shared\" />
-    <Folder Include="src\app\tenants\" />
     <Folder Include="src\app\tiles\" />
     <Folder Include="wwwroot\" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" Version="2.1.0-preview1-final" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="src\app\app-master-page.component.css">
+      <DependentUpon>app-master-page.component.html</DependentUpon>
+    </None>
+    <None Update="src\app\app-master-page.component.ts">
+      <DependentUpon>app-master-page.component.html</DependentUpon>
+    </None>
+    <None Update="src\app\app.component.css">
+      <DependentUpon>app.component.html</DependentUpon>
+    </None>
+    <None Update="src\app\app.component.ts">
+      <DependentUpon>app.component.html</DependentUpon>
+    </None>
+    <None Update="src\app\dashboards\dashboard-grid.component.css">
+      <DependentUpon>dashboard-grid.component.html</DependentUpon>
+    </None>
+    <None Update="src\app\dashboards\dashboard-grid.component.ts">
+      <DependentUpon>dashboard-grid.component.html</DependentUpon>
+    </None>
+    <None Update="src\app\dashboards\dashboard-header.component.css">
+      <DependentUpon>dashboard-header.component.html</DependentUpon>
+    </None>
+    <None Update="src\app\dashboards\dashboard-header.component.ts">
+      <DependentUpon>dashboard-header.component.html</DependentUpon>
+    </None>
+    <None Update="src\app\dashboards\dashboard-master-page.component.css">
+      <DependentUpon>dashboard-master-page.component.html</DependentUpon>
+    </None>
+    <None Update="src\app\dashboards\dashboard-master-page.component.ts">
+      <DependentUpon>dashboard-master-page.component.html</DependentUpon>
+    </None>
+    <None Update="src\app\dashboards\dashboard-page.component.css">
+      <DependentUpon>dashboard-page.component.html</DependentUpon>
+    </None>
+    <None Update="src\app\dashboards\dashboard-page.component.ts">
+      <DependentUpon>dashboard-page.component.html</DependentUpon>
+    </None>
   </ItemGroup>
 
 </Project>

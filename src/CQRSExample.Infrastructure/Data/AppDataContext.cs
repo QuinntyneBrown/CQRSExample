@@ -1,4 +1,5 @@
 ﻿using CQRSExample.Core.Entities;
+using CQRSExample.Core.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyModel;
 using System;
@@ -15,7 +16,13 @@ namespace CQRSExample.Infrastructure.Data
         DbSet<Customer> Customers { get; set; }
         DbSet<Dashboard> Dashboards { get; set; }
         DbSet<DashboardTile> DashboardTiles { get; set; }
+        DbSet<DigitalAsset> DigitalAssets { get; set; }
+        DbSet<Order> Orders { get; set; }
+        DbSet<Product> Products { get; set; }
         DbSet<Role> Roles { get; set; }
+        DbSet<ServiceProvider> ServiceProviders { get; set; }
+        DbSet<Service> Services { get; set; }
+        DbSet<Tenant> Tenants { get; set; }
         DbSet<Tile> Tiles { get; set; }
         DbSet<User> Users { get; set; }
         Guid TenantId { get; set; }
@@ -29,8 +36,14 @@ namespace CQRSExample.Infrastructure.Data
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Dashboard> Dashboards { get; set; }
         public DbSet<DashboardTile> DashboardTiles { get; set; }
+        public DbSet<DigitalAsset> DigitalAssets { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<Product> Products { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<Role> Roles { get; set; }
+        public DbSet<ServiceProvider> ServiceProviders { get; set; }
+        public DbSet<Service> Services { get; set; }
+        public DbSet<Tenant> Tenants { get; set; }
         public DbSet<Tile> Tiles { get; set; }
         public Guid TenantId { get; set; }
 
@@ -38,6 +51,17 @@ namespace CQRSExample.Infrastructure.Data
         {
 
             ChangeTracker.DetectChanges();
+
+            foreach (var entity in ChangeTracker.Entries()
+                .Where(e => e.Entity is ILoggable && ((e.State == EntityState.Added || (e.State == EntityState.Modified))))
+                .Select(x => x.Entity as ILoggable))
+            {
+                var isNew = entity.CreatedOn == default(DateTime);
+                entity.CreatedOn = isNew ? DateTime.UtcNow : entity.CreatedOn;
+                entity.CreatedBy = isNew ? username : entity.CreatedBy;
+                entity.LastModifiedOn = DateTime.UtcNow;
+                entity.LastModifiedBy = username;
+            }
 
             foreach (var item in ChangeTracker.Entries().Where(
                 e => e.State == EntityState.Added && e.Metadata.GetProperties().Any(p => p.Name == "TenantId")))
@@ -115,6 +139,5 @@ namespace CQRSExample.Infrastructure.Data
             builder.Entity<T>()
                 .HasQueryFilter(e => EF.Property<Guid>(e, "TenantId") == TenantId && !e.IsDeleted);
         }
-
     }
 }

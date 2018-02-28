@@ -1,7 +1,6 @@
 using MediatR;
 using System.Threading.Tasks;
 using System.Threading;
-using Microsoft.EntityFrameworkCore;
 using CQRSExample.Infrastructure.Data;
 using CQRSExample.Infrastructure.Services;
 using CQRSExample.Infrastructure.Requests;
@@ -31,8 +30,7 @@ namespace CQRSExample.Features.Users
 
             public async Task<Response> Handle(Request request, CancellationToken cancellationToken)
             {
-                var user = await _context.Users
-                    .SingleOrDefaultAsync(x => x.UserId == request.User.UserId);
+                var user = await _context.Users.FindAsync(request.User.UserId);
                 
                 if (user == null)
                     _context.Users.Add(user = new User());

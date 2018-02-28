@@ -7,7 +7,7 @@ using CQRSExample.Infrastructure.Services;
 using CQRSExample.Infrastructure.Requests;
 using CQRSExample.Core.Entities;
 
-namespace CQRSExample.WebAPI.Features.Roles
+namespace CQRSExample.Features.Roles
 {
     public class AddOrUpdateRoleCommand
     {
@@ -31,8 +31,7 @@ namespace CQRSExample.WebAPI.Features.Roles
 
             public async Task<Response> Handle(Request request, CancellationToken cancellationToken)
             {
-                var role = await _context.Roles
-                    .SingleOrDefaultAsync(x => x.RoleId == request.Role.RoleId);
+                var role = await _context.Roles.FindAsync(request.Role.RoleId);
                 
                 if (role == null)
                     _context.Roles.Add(role = new Role());
@@ -47,5 +46,7 @@ namespace CQRSExample.WebAPI.Features.Roles
             private readonly IAppDataContext _context;
             private readonly ICache _cache;
         }
+
     }
+
 }
