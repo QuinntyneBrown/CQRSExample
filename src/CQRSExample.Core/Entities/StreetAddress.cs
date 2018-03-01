@@ -1,6 +1,8 @@
-﻿namespace CQRSExample.Core.Entities
+﻿using CQRSExample.Core.Abstractions;
+
+namespace CQRSExample.Core.Entities
 {
-    public class StreetAddress: BaseModel
+    public class StreetAddress: ValueObject<StreetAddress>
     {
         public int StreetAddressId { get; set; }
         public string Street1 { get; set; }
