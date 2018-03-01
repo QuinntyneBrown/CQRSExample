@@ -1,5 +1,5 @@
 {
-  "name": "comsense-enterprise-v3-spa",
+  "name": "cqrs-example-spa",
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {

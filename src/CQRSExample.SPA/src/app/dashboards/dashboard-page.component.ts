@@ -12,7 +12,7 @@ import { DashboardsService } from "./dashboards.service";
 @Component({
     templateUrl: "./dashboard-page.component.html",
     styleUrls: ["./dashboard-page.component.css"],
-    selector: "cs-dashboard-page"
+    selector: "ce-dashboard-page"
 })
 export class DashboardPageComponent { 
     constructor(

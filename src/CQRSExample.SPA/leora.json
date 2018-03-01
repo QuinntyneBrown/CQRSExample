@@ -2,7 +2,7 @@
   "useMessaging": "false",
   "clientNamespace": "cs",
   "version": "core",
-  "rootNamespace": "Comsense.Enterprise.v3",
+  "rootNamespace": "CQRSExample",
   "framework": "AspNetCore",
   "multiTenant": false,
   "softDelete": false,

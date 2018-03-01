@@ -17,6 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Middleware\" />
     <Folder Include="src\app\login\" />
     <Folder Include="src\app\dashboards\" />
     <Folder Include="src\app\dashboard-tiles\" />
